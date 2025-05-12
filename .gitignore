@@ -1,0 +1,6 @@
+*.txt
+*.log
+*.html
+*.xlsx
+.idea/
+__pycache__/
