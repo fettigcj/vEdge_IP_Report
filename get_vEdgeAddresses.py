@@ -100,8 +100,9 @@ def add_interface_info(devices: dict, auth: tuple, interface_query_base_url: str
     Returns:
         dict: Updated device data with interface information
     """
-    for device in devices:
-        logging.info(f"Fetching interface information for device {device}")
+    deviceCount = len(devices)
+    for deviceNum, device in enumerate(devices, 1):
+        logging.info(f"Fetching interface information for device {device} ({deviceNum} of {deviceCount})")
         query_url = f"{interface_query_base_url}{device}"
         interfaces = fetch_raw_json(query_url, auth)
         devices[device]['interfaces'] = {}
